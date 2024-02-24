@@ -20,11 +20,11 @@ export default function Navbar({ navigation }) {
             <View >
                 <Feather name="shopping-cart" size={24} color="black" />
             </View>
-            {user.userType === "Trader" ? <View ><TouchableOpacity onPress={() => navigation.navigate("NewPost")}>
+            {/* {user.userType === "Trader" ? <View ><TouchableOpacity onPress={() => navigation.navigate("NewPost")}>
                 <AntDesign name="pluscircleo" size={24} color="black" />
-            </TouchableOpacity></View> : <View></View>}
+            </TouchableOpacity></View> : <View></View>} */}
             <View ><TouchableOpacity>
-                <Text>Settings</Text>
+            <Feather name="settings" size={24} color="black" />
             </TouchableOpacity></View>
         </View>
     )
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     navbar: {
         flex: 0,
         position: 'absolute',
+        display: 'flex',
         bottom: 0,
         height: 50,
         width: '100%',

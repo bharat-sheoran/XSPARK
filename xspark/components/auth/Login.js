@@ -42,8 +42,8 @@ export default function Login({ navigation }) {
     return (
         <Background>
             <View style={{ alignItems: "center", width: 350 }}>
-                <Text style={{ color: "#000000", fontSize: 64, fontWeight: '800', marginVertical: 20 }}>Login</Text>
-                <View style={{ marginTop: 10, marginLeft: 7, backgroundColor: "#fff", height: 450, width: 300, borderTopLeftRadius: 20, borderBottomRightRadius: 20, borderBottomLeftRadius: 20, borderTopRightRadius: 20, borderWidth: 0.4, paddingTop: 40, alignItems: 'center' }}>
+                <Text style={{ color: "#000000", fontSize: 64, fontWeight: '900', marginVertical: 30 }}>Login</Text>
+                <View style={{display:'flex',justifyContent: 'center',alignContent:'center', backgroundColor: "#fff", height: 470, width: 300, borderTopLeftRadius: 20, borderBottomRightRadius: 20, borderBottomLeftRadius: 20, borderTopRightRadius: 20, borderWidth: 0.4, paddingTop: 35, alignItems: 'center' }}>
                     <Text style={{ fontSize: 40, color: "#006400", fontWeight: '900' }}> Welcome Back</Text>
                     <Text style={{ color: 'grey', fontSize: 15, fontWeight: 'bold', marginBottom: 20, }}>  Login to your account</Text>
                     <View style={styles.container}>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 18,
         paddingHorizontal: 5,
-        borderRadius: 30,
+        borderRadius: 10,
         fontSize: 13,
     },
     button: {
@@ -102,62 +102,6 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: '#fff', // Button text color
-        fontSize: 16,
+        fontSize: 18,
     },
 });
-//     return (
-//         <View style={styles.container}>
-//             <TouchableOpacity>
-//             <FontAwesome5 name="user" size={100} style={styles.icon}color="black" />
-//             </TouchableOpacity>
-//             <TextInput
-//                 style={styles.input}
-//                 placeholder="Username"
-//                 value={authData.username}
-//                 onChangeText={(text) => handleAuthInputChange('username', text)} />
-//             <TextInput
-//                 style={styles.input}
-//                 placeholder="Password"
-//                 value={authData.password}
-//                 onChangeText={(text) => handleAuthInputChange('password', text)}
-//                 secureTextEntry />
-//             <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-//                 <Text style={styles.buttonText}>Login</Text>
-//             </TouchableOpacity>
-//         </View>
-//     )
-// }
-
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         justifyContent: 'flex-start', // Change to 'flex-start'
-//         alignItems: 'center',
-//     },
-//     input: {
-//         height: 60,
-//         width: '80%',
-//         borderWidth: 1,
-//         borderColor: 'black', // Border color
-//         color: 'black', // Text color
-//         marginTop:10,
-//         marginBottom: 20,
-//         paddingHorizontal: 15,
-//         borderRadius: 10,
-//         fontSize: 16,
-//     },
-//     button: {
-//         backgroundColor: '#4CAF50', // Button background color
-//         borderRadius: 10,
-//         paddingVertical: 10,
-//         paddingHorizontal: 20,
-//     },
-//     buttonText: {
-//         color: '#fff', // Button text color
-//         fontSize: 16,
-//     },
-//     icon: {
-//         paddingBottom: 20,
-//         paddingTop: 20,
-//     },
-// });

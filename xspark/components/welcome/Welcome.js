@@ -11,8 +11,8 @@ export default function Welcome({ navigation }) {
   return (
     <Background>
       <View style={styles.container}>
-        <Text style={styles.title}>XSpark</Text>
-        <Text style={styles.subtitle}>Welcome</Text>
+        <Text style={styles.title}>Let's Get Started</Text>
+        <Text style={styles.subtitle}>"From Farms to Trades, our app never fades; where cultivators and traders make prosperous trades!"</Text>
         <Btn bgColor={darkGreen} textColor={'white'} btnLabel="Login" Press={()=>navigation.navigate("Login")}/>
         <Btn bgColor={'white'} textColor={darkGreen} btnLabel="Sign Up" Press={()=>navigation.navigate("Signup")} />
 
@@ -24,20 +24,22 @@ export default function Welcome({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginHorizontal: 40,
-    marginVertical: 20,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    marginHorizontal: 35,
+    marginVertical: 15,
   },
   title: {
     marginTop:40,
-    color: 'white',
-    fontSize: 54,
+    color: darkGreen,
+    fontSize: 55,
+    fontWeight :'900',
     marginBottom: 20,
   },
   subtitle: {
-    color: 'white',
-    fontSize: 64,
-    marginBottom: 280,
+    color: '#45302e',
+    fontWeight: '700',
+    fontSize: 24,
+    marginBottom: 250,
   },
 });

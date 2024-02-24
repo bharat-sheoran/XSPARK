@@ -13,8 +13,8 @@ export default function Order({ route, navigation }) {
         dealPrice: "",
         fromDelivery: "",
         toDelivery: "",
-        trader: data.owner._id,
-        farmer: user.id,
+        trader: "",
+        farmer: "",
         status: "Request Sent"
     })
 
