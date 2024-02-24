@@ -29,6 +29,7 @@ export default function Login({ navigation }) {
 
             if (response.status === 200) {
                 await AsyncStorage.setItem('user', JSON.stringify(response.data.userData));
+                navigation.navigate("Home");
                 Alert.alert('Success', 'Logged in successfully');
             } else {
                 Alert.alert('Error', 'Invalid username or password');

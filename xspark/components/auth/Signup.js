@@ -35,6 +35,7 @@ export default function Signup({ navigation }) {
         console.log(registerData, userType);
         let response = await axios.post(`http://${ReqIP}:8080/api/auth/signup`, {registerData, userType: userType});
         console.log(response);
+        navigation.navigate("Login");
     }
 
     return (

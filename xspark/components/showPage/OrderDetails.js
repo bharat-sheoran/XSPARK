@@ -11,7 +11,6 @@ export default function OrderDetails({ PId, TId }) {
     const getOrder = async () => {
         try {
             const response = await axios.get(`http://${ReqIP}:8080/order/${PId}/${TId}`);
-            console.log(response.data);
             setOrderData(response.data);
         } catch (e) {
             console.log(e);
@@ -26,7 +25,7 @@ export default function OrderDetails({ PId, TId }) {
         <View>
             {orderData.map((o) => {
                 return (
-                    <TouchableOpacity onPress={()=>{console.log("Key Clicked")}} key={orderData._id}>
+                    <TouchableOpacity key={orderData._id} onPress={()=>{console.log("Key Clicked")}}>
                         <View key={orderData._id}>
                             <Text>{o.farmer.name}</Text>
                             <Text>Shipping From:{o.fromDelivery}</Text>

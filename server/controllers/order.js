@@ -12,5 +12,6 @@ module.exports.getPostOrder = async(req, res)=>{
     let data = req.params;
     console.log(data.PId, data.TId);
     let response = await (await Order.find({post: data.PId, trader: data.TId}).populate("farmer").exec());
+    console.log(response);
     res.send(response);
 }

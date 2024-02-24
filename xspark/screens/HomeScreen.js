@@ -34,7 +34,8 @@ export default function HomeScreen({ route, navigation }) {
             const response = await axios.get(`http://${ReqIP}:8080/api/auth/logout`);
             if (response.status === 200) {
                 await AsyncStorage.removeItem('user');
-                console.log("Item Deleted")
+                console.log("Item Deleted");
+                navigation.navigate("Welcome");
             }
         } catch (e) {
             console.log("Error while Logging out");
