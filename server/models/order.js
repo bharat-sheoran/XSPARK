@@ -29,11 +29,7 @@ const orderSchema = new Schema({
     status: {
         type: "String"
     },
-    // PaymentMethod: {
-    //     type: "String",
-    //     required: true,
-    //     enum: ["Cash", "UPI", "Credit Card", "Debit Card", "Netbanking"]
-    // }
+    
 });
 
 const Order = mongoose.model("Order", orderSchema);

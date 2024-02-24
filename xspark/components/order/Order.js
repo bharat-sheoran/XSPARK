@@ -10,7 +10,7 @@ export default function Order({ route, navigation }) {
     const user = useSelector((state) => state.user.user);
     const [acceptOrder, setAcceptOrder] = useState({
         post: data.id,
-        dealPrice: data.price,
+        dealPrice: "",
         fromDelivery: "",
         toDelivery: "",
         trader: data.owner._id,
@@ -48,6 +48,10 @@ export default function Order({ route, navigation }) {
                 placeholder="Delivery Address"
                 value={acceptOrder.toDelivery}
                 onChangeText={(text) => handleInputChange('toDelivery', text)} />
+            <TextInput
+                placeholder="Deal Price"
+                value={acceptOrder.dealPrice}
+                onChangeText={(text) => handleInputChange('dealPrice', text)} />
 
             <Button onPress={handleOrderRequest} title="Request Order"/>
         </View>

@@ -26,7 +26,7 @@ const data = [{
     price: 1500,
     location: "Malibu",
     country: "United States",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 },
 {
@@ -40,7 +40,7 @@ const data = [{
     price: 1200,
     location: "New York City",
     country: "United States",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 },
 {
@@ -54,7 +54,7 @@ const data = [{
     price: 1000,
     location: "Aspen",
     country: "United States",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 },
 {
@@ -68,7 +68,7 @@ const data = [{
     price: 2500,
     location: "Florence",
     country: "Italy",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 },
 {
@@ -82,7 +82,7 @@ const data = [{
     price: 800,
     location: "Portland",
     country: "United States",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 },
 {
@@ -96,7 +96,7 @@ const data = [{
     price: 2000,
     location: "Cancun",
     country: "Mexico",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 },
 {
@@ -110,7 +110,7 @@ const data = [{
     price: 900,
     location: "Lake Tahoe",
     country: "United States",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 },
 {
@@ -124,7 +124,7 @@ const data = [{
     price: 3500,
     location: "Los Angeles",
     country: "United States",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 },
 {
@@ -138,7 +138,7 @@ const data = [{
     price: 3000,
     location: "Verbier",
     country: "Switzerland",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 },
 {
@@ -152,7 +152,7 @@ const data = [{
     price: 4000,
     location: "Serengeti National Park",
     country: "Tanzania",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 },
 {
@@ -166,7 +166,7 @@ const data = [{
     price: 1800,
     location: "Amsterdam",
     country: "Netherlands",
-    owner: "65d74b9e85702a2cec59bf62",
+    owner: "65d9bdfca71a88eafbe6c6fa",
     amountRequired: 5
 }]
 

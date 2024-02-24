@@ -4,15 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import LoginScreen from './screens/LoginScreen.js';
 import WelcomeScreen from './screens/WelcomeScreen.js';
 import SignupScreen from './screens/SignupScreen.js';
-import { Provider } from 'react-redux';
-import { store } from './app/store.js';
-import HomeScreen from './screens/HomeScreen.js';
-import EditPostScreen from './screens/EditPostScreen.js';
-import NewPostScreen from './screens/NewPostScreen.js';
-import ShowPostScreen from './screens/ShowPostScreen.js';
-import MapScreen from './screens/MapScreen.js';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import OrderScreen from './screens/OrderScreen.js';
 
 export default function AuthApp() {
     const Stack = createNativeStackNavigator();
