@@ -61,7 +61,7 @@ export default function ShowPostScreen({ route, navigation }) {
                 {user.userType === "Farmer" ? <TouchableOpacity style={styles.bookNowButton} onPress={() => handleBookNow(data)}>
                     <Text style={{ color: 'white', fontWeight: 'bold' }}>Accept Order</Text>
                 </TouchableOpacity> : <View></View>}
-                <OrderDetails PId={data.id} TId={user.id} />
+                {/* <OrderDetails PId={data.id} TId={user.id} /> */}
             </ScrollView>
         </View>
     );

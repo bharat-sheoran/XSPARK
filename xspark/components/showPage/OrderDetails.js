@@ -1,5 +1,5 @@
-import { Text, TouchableOpacity } from 'react-native';
-import React, { useState, useEffect, StyleSheet } from 'react';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
 import { ReqIP } from '@env';
 import axios from 'axios';
 import { View, Pressable, ImageBackground, MaterialIcons } from 'react-native-animatable';
@@ -26,7 +26,7 @@ export default function OrderDetails({ PId, TId }) {
             {orderData.map((o) => {
                 return (
                     <View style = {{ margin: 10 }}>
-                        <Pressable style={{ flexDirection: "row" }}>
+                        <TouchableOpacity style={{ flexDirection: "row" }}>
                             <View>
                                 <ImageBackground
                                     imageStyle={{ borderRadius: 6 }}
@@ -79,11 +79,11 @@ export default function OrderDetails({ PId, TId }) {
                                     </Text>
                                 </View>
                             </View>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 )
             })}
-        </View >
+        </View>
     )
 }
 

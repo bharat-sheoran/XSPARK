@@ -72,14 +72,14 @@ const NewPostScreen = ({ navigation }) => {
         <CustomTextInput
           placeholder="Required Amount (in kgs)"
           keyboardType="numeric"
-          value={data.price.toString()}
-          onChangeText={(text) => handleChange('price', text)}
+          value={data.amountRequired.toString()}
+          onChangeText={(text) => handleChange('amountRequired', text)}
         />
         <CustomTextInput
           placeholder="Price (in Rs)"
           keyboardType="numeric"
-          value={data.amountRequired.toString()}
-          onChangeText={(text) => handleChange(amountRequired, text)}
+          value={data.price.toString()}
+          onChangeText={(text) => handleChange('price', text)}
         />
         <CustomButton title="Submit" onPress={handleSubmit} />
       </View>

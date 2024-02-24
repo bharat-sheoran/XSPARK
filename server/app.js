@@ -1,6 +1,8 @@
 if (process.env.NODE_ENV != "production") {
     require("dotenv").config();
 }
+
+const http = require('http');
 const express = require("express");
 const app = express();
 const port = process.env.PORT;
@@ -15,6 +17,9 @@ const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/auth.js");
 const mongoStore = require("connect-mongo");
 const cookieParser = require('cookie-parser');
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
 
 const mongoURL = process.env.MONGOURL;
 const store = mongoStore.create({
@@ -59,6 +64,9 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// io.on('connection', (socket) => {
+//     console.log("Socket Connected", socket.id);
+// });
 app.use("/home", postRouter);
 app.use("/api/auth", authRouter);
 app.use("/order", orderRouter);
@@ -80,6 +88,6 @@ app.get("/", (req, res) => {
 //     res.send(registeredUser);
 // });
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`App is listening at ${port}`);
 });
