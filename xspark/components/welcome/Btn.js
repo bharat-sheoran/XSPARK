@@ -14,7 +14,7 @@ export default function Btn({ bgColor, textColor, btnLabel, Press }) {
         marginVertical: 15
       }}
     >
-      <Text style={{ color: textColor, fontWeight: 'bold', fontSize: 26 }}>
+      <Text style={{ color: textColor, fontWeight: '700', fontSize: 22 }}>
         {btnLabel}
       </Text>
     </TouchableOpacity>

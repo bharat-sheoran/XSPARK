@@ -40,8 +40,8 @@ export default function Signup({ navigation }) {
     return (
         <Background>
             <View style={{ alignItems: "center", width: 350 }}>
-                <Text style={{ color: "#000000", fontSize: 60, fontWeight: '800', marginVertical: 15 }}>Register</Text>
-                <View style={{ marginTop: 5, marginLeft: 7, backgroundColor: "#fff", height: 560, width: 300, borderTopLeftRadius: 20, borderBottomRightRadius: 20, borderBottomLeftRadius: 20, borderTopRightRadius: 20, borderWidth: 0.4, paddingTop: 10, alignItems: 'center' }}>
+                <Text style={{ color: "#000000", fontSize: 60, fontWeight: '900', marginVertical: 15 }}>Register</Text>
+                <View style={{ display:'flex',justifyContent: 'center',alignContent:'center', backgroundColor: "#fff", height: 560, width: 300, borderTopLeftRadius: 20, borderBottomRightRadius: 20, borderBottomLeftRadius: 20, borderTopRightRadius: 20, borderWidth: 0.4, paddingTop: 10, alignItems: 'center' }}>
                     <Text style={{ fontSize: 40, color: "#006400", fontWeight: '900' }}>XSPARK</Text>
                     <Text style={{ color: 'grey', fontSize: 15, fontWeight: 'bold', marginBottom: 10, }}> Create your account</Text>
                     <View style={styles.container}>
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
         marginTop: 8,
         marginBottom: 15,
         paddingHorizontal: 5,
-        borderRadius: 30,
+        borderRadius: 10,
         fontSize: 13,
     },
     button: {

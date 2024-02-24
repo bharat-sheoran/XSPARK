@@ -13,8 +13,8 @@ export default function Order({ route, navigation }) {
         dealPrice: data.price,
         fromDelivery: "",
         toDelivery: "",
-        trader: data.owner._id,
-        farmer: user.id,
+        trader: "",
+        farmer: "",
         status: "Request Sent"
     })
 
@@ -28,7 +28,7 @@ export default function Order({ route, navigation }) {
     const handleOrderRequest = async ()=>{
         try{
             console.log(acceptOrder);
-            const response = await axios.post(`http://${ReqIP}:8080/order/place`, {acceptOrder});
+            // const response = await axios.post(`http://${ReqIP}:8080/order/place`, {acceptOrder});
             console.log(response.data);
         }catch(e){
             console.log(e);
@@ -37,7 +37,7 @@ export default function Order({ route, navigation }) {
 
     return (
         <View>
-            <Text>Trader: {data.owner.name}</Text>
+            {/* <Text>Trader: {data.owner.name}</Text> */}
             <Text>Post: {data.title}</Text>
             <Text>Price: {data.price}</Text>
             <TextInput

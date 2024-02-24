@@ -31,7 +31,7 @@ export default function ShowPostScreen({ route, navigation }) {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <Text style={styles.title}>{user.name}</Text>
+                {/* <Text style={styles.title}>{user.name}</Text> */}
                 <Image source={{ uri: image }} style={styles.image} />
                 <View style={styles.content}>
                     <Text style={styles.title}>{data.title}</Text>
@@ -44,20 +44,20 @@ export default function ShowPostScreen({ route, navigation }) {
                     </Text>
                     <View style={styles.clockContainer}>
                         <AntDesign name="clockcircleo" size={26} color="black" />
-                        <Text style={{ fontWeight: '500' }}> 6 Months</Text>
-                        <MaterialIcons name="currency-rupee" size={26} color="black" style={{ paddingLeft: 20, }} />
+                        <Text style={{ fontWeight: '500' }}>6 Months</Text>
+                        <MaterialIcons name="currency-rupee" size={25} color="black" style={{ paddingLeft: 40 , }} />
                         <Text style={{ fontWeight: '500' }}>{data.price}/-</Text>
                         <Entypo name="database" size={26} color="black" style={{ paddingLeft: 20, }} />
-                        <Text style={{ fontWeight: '500' }}>{data.amountRequired}Kg</Text>
+                        <Text style={{ fontWeight: '500' }}>{data.amountRequired}100Kg</Text>
                     </View>
                 </View>
             </ScrollView>
-            {user.id === data.owner._id ? <View><TouchableOpacity style={[styles.bookNowButton, { backgroundColor: "#f79457" }]} onPress={() => navigation.navigate('EditPost', { data: data })}>
+            <View><TouchableOpacity style={[styles.bookNowButton, { backgroundColor: "#f79457" }]} onPress={() => navigation.navigate('EditPost', { data: data })}>
                 <Text style={{ color: 'white', fontWeight: 'bold' }}>Edit</Text>
             </TouchableOpacity>
                 <TouchableOpacity style={[styles.bookNowButton, { backgroundColor: "#fc4444" }]} onPress={() => handleDelete(p.id)}>
                     <Text style={{ color: 'white', fontWeight: 'bold' }}>Delete</Text>
-                </TouchableOpacity></View> : <View></View>}
+                </TouchableOpacity></View>
             {user.userType === "Farmer" ? <TouchableOpacity style={styles.bookNowButton} onPress={()=> handleBookNow(data)}>
                 <Text style={{ color: 'white', fontWeight: 'bold' }}>Accept Order</Text>
             </TouchableOpacity> : <View></View>}
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     },
     clockContainer: {
         display: 'flex',
-        justifyContent: 'space-around',
+        justifyContent: 'space-evenly',
         flexDirection: 'row',
         alignItems: 'center',
         paddingTop: 20,

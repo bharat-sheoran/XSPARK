@@ -68,17 +68,17 @@ app.get("/", (req, res) => {
     res.send("Server is Working fine");
 });
 
-// app.get("/demouser", async (req, res) => {
-//     let fakeUser = new User({
-//         email: "neerajanthal@gmail.com",
-//         username: "neerajanthal",
-//         name: "Neeraj Anthal",
-//         userType: "Trader"
-//     });
+app.get("/demouser", async (req, res) => {
+    let fakeUser = new User({
+        email: "Muditsingh8787@gmail.com",
+        username: "Mudit4",
+        name: "Mudit",
+        userType: "Farmer"
+    });
 
-//     let registeredUser = await User.register(fakeUser, "neerajanthal");
-//     res.send(registeredUser);
-// });
+    let registeredUser = await User.register(fakeUser, "Mudit2004");
+    res.send(registeredUser);
+});
 
 app.listen(port, () => {
     console.log(`App is listening at ${port}`);
