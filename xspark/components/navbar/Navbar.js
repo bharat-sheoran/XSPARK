@@ -20,9 +20,9 @@ export default function Navbar({ navigation }) {
             <View >
                 <Feather name="shopping-cart" size={24} color="black" />
             </View>
-            {/* {user.userType === "Trader" ? <View ><TouchableOpacity onPress={() => navigation.navigate("NewPost")}>
+            {user.userType === "Trader" ? <View ><TouchableOpacity onPress={() => navigation.navigate("NewPost")}>
                 <AntDesign name="pluscircleo" size={24} color="black" />
-            </TouchableOpacity></View> : <View></View>} */}
+            </TouchableOpacity></View> : <View></View>}
             <View ><TouchableOpacity>
             <Feather name="settings" size={24} color="black" />
             </TouchableOpacity></View>
