@@ -49,15 +49,15 @@ export default function ShowPostScreen({ route, navigation }) {
                         <MaterialIcons name="currency-rupee" size={25} color="black" style={{ paddingLeft: 40 , }} />
                         <Text style={{ fontWeight: '500' }}>{data.price}/-</Text>
                         <Entypo name="database" size={26} color="black" style={{ paddingLeft: 20, }} />
-                        <Text style={{ fontWeight: '500' }}>{data.amountRequired}100Kg</Text>
+                        <Text style={{ fontWeight: '500' }}>{data.amountRequired}Kg</Text>
                     </View>
                 </View>
-                {user.id === data.owner._id ? <View><TouchableOpacity style={[styles.bookNowButton, { backgroundColor: "#f79457" }]} onPress={() => navigation.navigate('EditPost', { data: data })}>
+                {user.id === data.owner._id ? <View style={styles.b2}><TouchableOpacity style={[styles.bookNowButton, { backgroundColor: "#f79457" }]} onPress={() => navigation.navigate('EditPost', { data: data })}>
                     <Text style={{ color: 'white', fontWeight: 'bold' }}>Edit</Text>
                 </TouchableOpacity>
                     <TouchableOpacity style={[styles.bookNowButton, { backgroundColor: "#fc4444" }]} onPress={() => handleDelete(p.id)}>
                         <Text style={{ color: 'white', fontWeight: 'bold' }}>Delete</Text>
-                    </TouchableOpacity></View> : <View></View>}
+                    </TouchableOpacity></View> : <View></View>  }
                 {user.userType === "Farmer" ? <TouchableOpacity style={styles.bookNowButton} onPress={() => handleBookNow(data)}>
                     <Text style={{ color: 'white', fontWeight: 'bold' }}>Accept Order</Text>
                 </TouchableOpacity> : <View></View>}
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: '100%',
-        height: 300,
+        height: 250,
         resizeMode: 'cover',
         // borderTopLeftRadius: 20,
         // borderTopRightRadius: 20,
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     },
     clockContainer: {
         display: 'flex',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-around',
         flexDirection: 'row',
         alignItems: 'center',
         paddingTop: 20,
@@ -124,4 +124,10 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginBottom: 20,
     },
+    b2: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        paddingTop: 30,
+    }
 });
