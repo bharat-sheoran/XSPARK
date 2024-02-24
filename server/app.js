@@ -61,24 +61,24 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use("/home", postRouter);
 app.use("/api/auth", authRouter);
-app.use("/order/place", orderRouter);
+app.use("/order", orderRouter);
 
 app.get("/", (req, res) => {
     console.log("Server is Running fine");
     res.send("Server is Working fine");
 });
 
-app.get("/demouser", async (req, res) => {
-    let fakeUser = new User({
-        email: "Muditsingh8787@gmail.com",
-        username: "Mudit4",
-        name: "Mudit",
-        userType: "Farmer"
-    });
+// app.get("/demouser", async (req, res) => {
+//     let fakeUser = new User({
+//         email: "bharatsheoran03@gmail.com",
+//         username: "bharatsheoran",
+//         name: "Bharat Sheoran",
+//         userType: "Trader"
+//     });
 
-    let registeredUser = await User.register(fakeUser, "Mudit2004");
-    res.send(registeredUser);
-});
+//     let registeredUser = await User.register(fakeUser, "bharatsheoran");
+//     res.send(registeredUser);
+// });
 
 app.listen(port, () => {
     console.log(`App is listening at ${port}`);

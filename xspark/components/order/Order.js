@@ -10,7 +10,7 @@ export default function Order({ route, navigation }) {
     const user = useSelector((state) => state.user.user);
     const [acceptOrder, setAcceptOrder] = useState({
         post: data.id,
-        dealPrice: data.price,
+        dealPrice: "",
         fromDelivery: "",
         toDelivery: "",
         trader: "",
@@ -28,7 +28,7 @@ export default function Order({ route, navigation }) {
     const handleOrderRequest = async ()=>{
         try{
             console.log(acceptOrder);
-            // const response = await axios.post(`http://${ReqIP}:8080/order/place`, {acceptOrder});
+            const response = await axios.post(`http://${ReqIP}:8080/order`, {acceptOrder});
             console.log(response.data);
         }catch(e){
             console.log(e);
@@ -37,7 +37,7 @@ export default function Order({ route, navigation }) {
 
     return (
         <View>
-            {/* <Text>Trader: {data.owner.name}</Text> */}
+            <Text>Trader: {data.owner.name}</Text>
             <Text>Post: {data.title}</Text>
             <Text>Price: {data.price}</Text>
             <TextInput
@@ -48,6 +48,10 @@ export default function Order({ route, navigation }) {
                 placeholder="Delivery Address"
                 value={acceptOrder.toDelivery}
                 onChangeText={(text) => handleInputChange('toDelivery', text)} />
+            <TextInput
+                placeholder="Deal Price"
+                value={acceptOrder.dealPrice}
+                onChangeText={(text) => handleInputChange('dealPrice', text)} />
 
             <Button onPress={handleOrderRequest} title="Request Order"/>
         </View>

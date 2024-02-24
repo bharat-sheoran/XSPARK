@@ -7,4 +7,7 @@ const {isLoggedIn} = require('../middleware.js');
 router.route("/")
     .post(isLoggedIn, WrapAsync(orderController.PlaceOrder));
 
+router.route("/:PId/:TId")
+    .get(isLoggedIn, WrapAsync(orderController.getPostOrder));
+
 module.exports = router;
