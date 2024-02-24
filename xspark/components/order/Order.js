@@ -28,7 +28,7 @@ export default function Order({ route, navigation }) {
     const handleOrderRequest = async ()=>{
         try{
             console.log(acceptOrder);
-            const response = await axios.post(`http://${ReqIP}:8080/order/place`, {acceptOrder});
+            const response = await axios.post(`http://${ReqIP}:8080/order`, {acceptOrder});
             console.log(response.data);
         }catch(e){
             console.log(e);

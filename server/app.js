@@ -61,7 +61,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use("/home", postRouter);
 app.use("/api/auth", authRouter);
-app.use("/order/place", orderRouter);
+app.use("/order", orderRouter);
 
 app.get("/", (req, res) => {
     console.log("Server is Running fine");
