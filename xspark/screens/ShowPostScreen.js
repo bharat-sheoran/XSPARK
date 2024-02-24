@@ -4,7 +4,7 @@ import { ReqIP } from '@env';
 import { deletePost } from '../features/post/postSlice';
 
 // TODO: Take Edit and Delete Button only if user is author
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable, ImageBackground } from 'react-native';
 import { AntDesign, MaterialIcons, Entypo } from '@expo/vector-icons';
 import OrderDetails from '../components/showPage/OrderDetails';
 
@@ -32,7 +32,7 @@ export default function ShowPostScreen({ route, navigation }) {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <Text style={styles.title}>{user.name}</Text>
+                {/* <Text style={styles.title}>{user.name}</Text> */}
                 <Image source={{ uri: image }} style={styles.image} />
                 <View style={styles.content}>
                     <Text style={styles.title}>{data.title}</Text>
@@ -46,7 +46,7 @@ export default function ShowPostScreen({ route, navigation }) {
                     <View style={styles.clockContainer}>
                         <AntDesign name="clockcircleo" size={26} color="black" />
                         <Text style={{ fontWeight: '500' }}>6 Months</Text>
-                        <MaterialIcons name="currency-rupee" size={25} color="black" style={{ paddingLeft: 40 , }} />
+                        <MaterialIcons name="currency-rupee" size={25} color="black" style={{ paddingLeft: 40, }} />
                         <Text style={{ fontWeight: '500' }}>{data.price}/-</Text>
                         <Entypo name="database" size={26} color="black" style={{ paddingLeft: 20, }} />
                         <Text style={{ fontWeight: '500' }}>{data.amountRequired}Kg</Text>
@@ -57,7 +57,7 @@ export default function ShowPostScreen({ route, navigation }) {
                 </TouchableOpacity>
                     <TouchableOpacity style={[styles.bookNowButton, { backgroundColor: "#fc4444" }]} onPress={() => handleDelete(p.id)}>
                         <Text style={{ color: 'white', fontWeight: 'bold' }}>Delete</Text>
-                    </TouchableOpacity></View> : <View></View>  }
+                    </TouchableOpacity></View> : <View></View>}
                 {user.userType === "Farmer" ? <TouchableOpacity style={styles.bookNowButton} onPress={() => handleBookNow(data)}>
                     <Text style={{ color: 'white', fontWeight: 'bold' }}>Accept Order</Text>
                 </TouchableOpacity> : <View></View>}
