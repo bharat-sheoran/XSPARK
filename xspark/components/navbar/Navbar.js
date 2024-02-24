@@ -12,20 +12,30 @@ export default function Navbar({ navigation }) {
     return (
         <View style={styles.navbar}>
             <TouchableOpacity style={{
-                marginTop: 15,
+                marginTop: 10,
                 paddingTop: 5,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
             }} onPress={() => navigation.navigate("Home")}>
                 <Octicons name="home" size={24} color="black" />
+                <Text>Home</Text>
             </TouchableOpacity>
-            <View >
-                <Feather name="shopping-cart" size={24} color="black" />
+            <View>
+                <TouchableOpacity>
+                    <Ionicons name="chatbubbles-outline" size={25} color="black" />
+                    <Text>Chat</Text>
+                </TouchableOpacity>
             </View>
-            {user.userType === "Trader" ? <View ><TouchableOpacity onPress={() => navigation.navigate("NewPost")}>
+            {user.userType === "Trader" ? <View><TouchableOpacity onPress={() => navigation.navigate("NewPost")}>
                 <AntDesign name="pluscircleo" size={24} color="black" />
+                <Text>Post</Text>
             </TouchableOpacity></View> : <View></View>}
             <View ><TouchableOpacity>
-            <Feather name="settings" size={24} color="black" />
-            </TouchableOpacity></View>
+                <Feather name="shopping-cart" size={24} color="black" />
+                <Text>Cart</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
@@ -40,12 +50,12 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        backgroundColor: '#EEE5E9',
+        backgroundColor: '#f0f0f0',
         borderTopLeftRadius: 3,
         borderTopRightRadius: 3,
         flexDirection: 'row',
         flexWrap: 'wrap',
         zIndex: 2,
-        borderWidth: 0.2
+        borderWidth: 0.2,
     }
 });

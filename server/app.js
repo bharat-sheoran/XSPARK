@@ -70,13 +70,13 @@ app.get("/", (req, res) => {
 
 // app.get("/demouser", async (req, res) => {
 //     let fakeUser = new User({
-//         email: "bharatsheoran03@gmail.com",
-//         username: "bharatsheoran",
-//         name: "Bharat Sheoran",
-//         userType: "Trader"
+//         email: "muditsingh04@gmail.com",
+//         username: "singhmuditF",
+//         name: "Mudit Singh",
+//         userType: "Farmer"
 //     });
 
-//     let registeredUser = await User.register(fakeUser, "bharatsheoran");
+//     let registeredUser = await User.register(fakeUser, "abc");
 //     res.send(registeredUser);
 // });
 

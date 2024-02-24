@@ -39,14 +39,8 @@ export default function Home({ navigation }) {
           <Text style={styles.description}>{p.description}</Text>
           <Text style={styles.countryLocation}>{p.country}, {p.location}</Text>
           <View style={styles.buttonContainer}>
-            <Text style={styles.price}>Rs.{p.price}</Text>
+            <Text style={styles.price}>Rs. {p.price}</Text>
             <Text style={styles.price}>Required Amount: {p.amountRequired}Kg</Text>
-            {/* <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditPost', { data: p })}>
-                <Text style={styles.buttonText}>Edit</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={[styles.button, styles.deleteButton]} onPress={() => handleDelete(p.id)}>
-                <Text style={[styles.buttonText, styles.deleteButtonText]}>Delete</Text>
-              </TouchableOpacity> */}
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -55,12 +49,12 @@ export default function Home({ navigation }) {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
-      <ScrollView showsVerticalScrollIndicator={false} style={{ padding: 10 }}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{ padding: 10}}>
         <View style={{ margin: 5, marginBottom: 4 }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: '#e5e5e5', borderRadius: 20, padding: 10, paddingLeft: 20 }}>
             <MagnifyingGlassIcon size={20} strokeWidth={3} color={'grey'} />
             <TextInput
-              placeholder='Search Destination'
+              placeholder='Search Order'
               placeholderTextColor={'grey'}
               style={{ flex: 1, fontSize: 16, marginLeft: 10 }}
               onChangeText={(text) => handleSearch(text)}
@@ -80,7 +74,9 @@ export default function Home({ navigation }) {
         </View>
       </ScrollView>
 
-      <ScrollView>
+      <ScrollView style={{
+        marginBottom: 50
+      }}>
         <View style={styles.outerCard}>
           {search.length > 3 ? searchData.map((p) => card(p, p._id, p.image.url)) : post.map((p) => card(p, p.id, p.image))}
         </View>
@@ -104,9 +100,9 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.30,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 6,
   },
   title: {
     fontSize: 18,
@@ -114,8 +110,9 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   description: {
-    fontSize: 16,
+    fontSize: 15,
     marginBottom: 5,
+    fontWeight: '400'
   },
   countryLocation: {
     fontSize: 14,
@@ -125,10 +122,10 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 2,
   },
   buttonContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
   },
   button: {

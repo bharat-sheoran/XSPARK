@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { Route, json } from 'react-router-native';
 import { ReqIP } from '@env';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { MaterialIcons } from '@expo/vector-icons';
 const NewPostScreen = ({ navigation }) => {
   const user = useSelector((state)=> state.user.user);
 
@@ -42,6 +42,10 @@ const NewPostScreen = ({ navigation }) => {
 
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <Text style={{fontSize: 30,paddingBottom: 1,fontWeight: '800',color: "#006400",paddingLeft: 100,paddingTop: 10,}}>Post an Order</Text>
+      <View style={{ display: 'flex',justifyContent: 'center',alignItems: 'center'}}>
+      <MaterialIcons name="post-add" size={35} color="black" />
+      </View>
       <View style={styles.container}>
         <CustomTextInput
           placeholder="Title"
@@ -56,7 +60,7 @@ const NewPostScreen = ({ navigation }) => {
           style={styles.messageInput}
         />
         <CustomTextInput
-          placeholder="Country"
+          placeholder="State"
           value={data.country}
           onChangeText={(text) => handleChange('country', text)}
         />
@@ -66,16 +70,16 @@ const NewPostScreen = ({ navigation }) => {
           onChangeText={(text) => handleChange('location', text)}
         />
         <CustomTextInput
-          placeholder="Required Amount"
+          placeholder="Required Amount (in kgs)"
           keyboardType="numeric"
           value={data.price.toString()}
           onChangeText={(text) => handleChange('price', text)}
         />
         <CustomTextInput
-          placeholder="Price"
+          placeholder="Price (in Rs)"
           keyboardType="numeric"
           value={data.amountRequired.toString()}
-          onChangeText={(text) => handleChange('amountRequired', text)}
+          onChangeText={(text) => handleChange(amountRequired, text)}
         />
         <CustomButton title="Submit" onPress={handleSubmit} />
       </View>
@@ -112,8 +116,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 45,
-    backgroundColor: '#fff', // Set a background color for the container
+    paddingHorizontal: 35,
+    // backgroundColor: "#F5DEB3", // Set a background color for the container
+    marginBottom: 25,
   },
   input: {
     borderWidth: 1,
@@ -131,7 +136,7 @@ const styles = StyleSheet.create({
     height: 100,
   },
   buttonContainer: {
-    backgroundColor: '#4D6AFF',
+    backgroundColor: '#006400',
     borderRadius: 30,
     paddingVertical: 15,
     paddingHorizontal: 20,

@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
   title: {
     marginTop:40,
     color: darkGreen,
-    fontSize: 55,
+    fontSize: 35,
     fontWeight :'900',
     marginBottom: 20,
   },
   subtitle: {
-    color: '#45302e',
+    color: '#6F4E37',
     fontWeight: '700',
-    fontSize: 24,
-    marginBottom: 250,
+    fontSize: 17,
+    marginBottom: 350,
   },
 });
