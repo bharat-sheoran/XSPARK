@@ -35,7 +35,6 @@ export default function Order({ route, navigation }) {
             console.log(e);
         }
     }
-  };
 
   return (
     <View>
