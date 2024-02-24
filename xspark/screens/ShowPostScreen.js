@@ -1,7 +1,8 @@
 import React, { useLayoutEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { ReqIP } from '@env';
 import { deletePost } from '../features/post/postSlice';
+import axios from 'axios';
 
 // TODO: Take Edit and Delete Button only if user is author
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable, ImageBackground } from 'react-native';
@@ -9,6 +10,7 @@ import { AntDesign, MaterialIcons, Entypo } from '@expo/vector-icons';
 import OrderDetails from '../components/showPage/OrderDetails';
 
 export default function ShowPostScreen({ route, navigation }) {
+    const dispatch = useDispatch();
     const data = route.params.data;
     const image = route.params.image;
     const user = useSelector((state) => state.user.user);
@@ -55,7 +57,7 @@ export default function ShowPostScreen({ route, navigation }) {
                 {user.id === data.owner._id ? <View style={styles.b2}><TouchableOpacity style={[styles.bookNowButton, { backgroundColor: "#f79457" }]} onPress={() => navigation.navigate('EditPost', { data: data })}>
                     <Text style={{ color: 'white', fontWeight: 'bold' }}>Edit</Text>
                 </TouchableOpacity>
-                    <TouchableOpacity style={[styles.bookNowButton, { backgroundColor: "#fc4444" }]} onPress={() => handleDelete(p.id)}>
+                    <TouchableOpacity style={[styles.bookNowButton, { backgroundColor: "#fc4444" }]} onPress={() => handleDelete(data.id)}>
                         <Text style={{ color: 'white', fontWeight: 'bold' }}>Delete</Text>
                     </TouchableOpacity></View> : <View></View>}
                 {user.userType === "Farmer" ? <TouchableOpacity style={styles.bookNowButton} onPress={() => handleBookNow(data)}>
