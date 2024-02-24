@@ -1,55 +1,127 @@
-import { Button, TextInput } from "react-native";
-import { Text, View } from "react-native-animatable";
 import React, { useState } from 'react';
-import { useSelector } from "react-redux";
-import axios from "axios";
-import {ReqIP} from '@env';
+import { useSelector } from 'react-redux';
+import { TextInput, Text, View, StyleSheet } from 'react-native';
+import axios from 'axios';
+import { ReqIP } from '@env';
+import Btn from './Btn.js';
+import { darkGreen } from './Constants';
 
 export default function Order({ route, navigation }) {
-    const data = route.params.data;
-    const user = useSelector((state) => state.user.user);
-    const [acceptOrder, setAcceptOrder] = useState({
-        post: data.id,
-        dealPrice: data.price,
-        fromDelivery: "",
-        toDelivery: "",
-        trader: data.owner._id,
-        farmer: user.id,
-        status: "Request Sent"
-    })
+  const data = route.params.data;
+  const user = useSelector((state) => state.user.user);
+  const [acceptOrder, setAcceptOrder] = useState({
+    post: data.id,
+    dealPrice: data.price,
+    fromDelivery: '',
+    toDelivery: '',
+    trader: '',
+    farmer: '',
+    status: 'Request Sent',
+  });
 
-    function handleInputChange(key, value){
-        setAcceptOrder({
-            ...acceptOrder,
-            [key]: value
-        });
+  function handleInputChange(key, value) {
+    setAcceptOrder({
+      ...acceptOrder,
+      [key]: value,
+    });
+  }
+
+  const handleOrderRequest = async () => {
+    try {
+      console.log(acceptOrder);
+      // const response = await axios.post(`http://${ReqIP}:8080/order/place`, {acceptOrder});
+      // console.log(response.data); // Commented out since response is not defined
+    } catch (e) {
+      console.log(e);
     }
+  };
 
-    const handleOrderRequest = async ()=>{
-        try{
-            console.log(acceptOrder);
-            const response = await axios.post(`http://${ReqIP}:8080/order/place`, {acceptOrder});
-            console.log(response.data);
-        }catch(e){
-            console.log(e);
-        }
-    }
+  return (
+    <View>
+      <Text style={styles.title}>Post: {data.title}</Text>
+      <Text style={styles.highlightedPrice}>Price: {data.price}</Text>
+  
+  
+      <View style={styles.container}>
 
-    return (
-        <View>
-            <Text>Trader: {data.owner.name}</Text>
-            <Text>Post: {data.title}</Text>
-            <Text>Price: {data.price}</Text>
-            <TextInput
-                placeholder="Shipping Address"
-                value={acceptOrder.fromDelivery}
-                onChangeText={(text) => handleInputChange('fromDelivery', text)} />
-            <TextInput
-                placeholder="Delivery Address"
-                value={acceptOrder.toDelivery}
-                onChangeText={(text) => handleInputChange('toDelivery', text)} />
+      <Text style={styles.label}>Delivery Address:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter delivery address"
+          value={acceptOrder.toDelivery}
+          onChangeText={(text) => handleInputChange('toDelivery', text)}
+        />
 
-            <Button onPress={handleOrderRequest} title="Request Order"/>
+        <Text style={styles.label}>Your Offer Price:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Eg Rs1500"
+          value={acceptOrder.fromDelivery}
+          onChangeText={(text) => handleInputChange('fromDelivery', text)}
+        />
+  
+       
+  
+        {/* Assuming Btn is another custom component you have defined */}
+        <View style={styles.buttonContainer}>
+          <Btn
+            onPress={handleOrderRequest}
+            title="Request Order"
+            bgColor="#9195F6"
+            textColor="white"
+            btnLabel="Place Order"
+            Press={() => navigation.navigate('Login')}
+          />
         </View>
-    )
+  
+        <View style={styles.buttonContainer}>
+          <Btn
+            onPress={handleOrderRequest}
+            title="Request Order"
+            bgColor="white"
+            textColor={darkGreen}
+            btnLabel="Cancel"
+            Press={() => navigation.navigate('Signup')}
+          />
+        </View>
+      </View>
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+    title: {
+      fontSize: 26,
+      fontWeight: 'bold',
+      textAlign: 'center', 
+      marginBottom: 20, 
+      marginTop:10,
+    },
+    highlightedPrice: {
+      fontSize: 26,
+      color: darkGreen,
+      fontWeight: 'bold', // Make the price bold
+      marginBottom: 0, // Add some space below the price
+      textAlign: 'center', // Center the text
+    },
+    label: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      marginBottom: 5,
+    },
+    input: {
+      borderWidth: 1,
+      borderColor: '#ccc',
+      borderRadius: 8,
+      padding: 10,
+      marginBottom: 15,
+    },
+    container: {
+      padding: 16,
+    },
+    buttonContainer: {
+        marginTop:30,
+      
+    },
+  });
+  

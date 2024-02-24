@@ -10,7 +10,7 @@ import HomeScreen from './screens/HomeScreen.js';
 import EditPostScreen from './screens/EditPostScreen.js';
 import NewPostScreen from './screens/NewPostScreen.js';
 import ShowPostScreen from './screens/ShowPostScreen.js';
-import MapScreen from './screens/MapScreen.js';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import OrderScreen from './screens/OrderScreen.js';
 

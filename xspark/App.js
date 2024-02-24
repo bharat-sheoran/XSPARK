@@ -13,7 +13,7 @@ import { Button } from 'react-native';
 
 import WelcomeScreen from './screens/WelcomeScreen.js';
 
-import MapScreen from './screens/MapScreen.js';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import OrderScreen from './screens/OrderScreen.js';
 import MainApp from './MainApp.js';

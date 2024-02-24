@@ -33,7 +33,7 @@ export default function Home({ navigation }) {
     return (
       <TouchableWithoutFeedback key={id} onPress={() => navigation.navigate('ShowPost', { data: p, image: src })}>
         <View key={id} style={styles.card}>
-          <Text style={styles.title}>{p.owner.name}</Text>
+          {/* <Text style={styles.title}>{p.owner.name}</Text> */}
           <Image source={{ uri: src }} style={styles.image} />
           <Text style={styles.title}>{p.title}</Text>
           <Text style={styles.description}>{p.description}</Text>
