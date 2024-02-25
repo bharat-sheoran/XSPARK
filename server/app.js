@@ -25,12 +25,12 @@ const mongoURL = process.env.MONGOURL;
 const store = mongoStore.create({
     mongoUrl: mongoURL,
     crypto: {
-        secret:process.env.SESSIONSECRET
+        secret: process.env.SESSIONSECRET
     },
-    touchAfter: 24*3600
+    touchAfter: 24 * 3600
 })
 
-store.on("error" , ()=>{
+store.on("error", () => {
     console.log("ERROR IN MONGO SESSION STORE", err);
 })
 
@@ -47,12 +47,12 @@ const sessionOptions = {
     saveUninitialized: false,
     cookie: {
         expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-        maxAge: 7*24*60*60*1000,
+        maxAge: 7 * 24 * 60 * 60 * 1000,
         httpOnly: true
     }
 }
 
-app.use(cors({credentials: true}));
+app.use(cors({ credentials: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
@@ -64,9 +64,13 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// io.on('connection', (socket) => {
-//     console.log("Socket Connected", socket.id);
-// });
+io.on('connection', (socket) => {
+    console.log('A user connected');
+
+    socket.on('disconnect', () => {
+        console.log('User disconnected');
+    });
+});
 app.use("/home", postRouter);
 app.use("/api/auth", authRouter);
 app.use("/order", orderRouter);

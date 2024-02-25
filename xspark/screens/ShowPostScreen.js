@@ -34,13 +34,13 @@ export default function ShowPostScreen({ route, navigation }) {
     return (
         <View style={styles.container}>
             <ScrollView>
-                {/* <Text style={styles.title}>{user.name}</Text> */}
+                <Text style={styles.title}>{data.owner.name}</Text>
                 <Image source={{ uri: image }} style={styles.image} />
                 <View style={styles.content}>
                     <Text style={styles.title}>{data.title}</Text>
                     <Text style={styles.description}>{data.description}</Text>
                     <Text style={styles.details}>
-                        <Text style={styles.detailLabel}>Country:</Text> {data.country}
+                        <Text style={styles.detailLabel}>State:</Text> {data.country}
                     </Text>
                     <Text style={styles.details}>
                         <Text style={styles.detailLabel}>Location:</Text> {data.location}
@@ -63,7 +63,7 @@ export default function ShowPostScreen({ route, navigation }) {
                 {user.userType === "Farmer" ? <TouchableOpacity style={styles.bookNowButton} onPress={() => handleBookNow(data)}>
                     <Text style={{ color: 'white', fontWeight: 'bold' }}>Accept Order</Text>
                 </TouchableOpacity> : <View></View>}
-                {/* <OrderDetails PId={data.id} TId={user.id} /> */}
+                <OrderDetails data={data} PId={data.id} TId={user.id} navigation={navigation}/>
             </ScrollView>
         </View>
     );

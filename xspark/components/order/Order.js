@@ -13,7 +13,7 @@ export default function Order({ route, navigation }) {
         post: data.id,
         dealPrice: "",
         fromDelivery: "",
-        toDelivery: "",
+        toDelivery: "Ambala",
         trader: data.owner._id,
         farmer: user.id,
         status: "Request Sent"
@@ -48,29 +48,27 @@ export default function Order({ route, navigation }) {
         <TextInput
           style={styles.input}
           placeholder="Enter delivery address"
-          value={acceptOrder.toDelivery}
-          onChangeText={(text) => handleInputChange('toDelivery', text)}
+          value={acceptOrder.fromDelivery}
+          onChangeText={(text) => handleInputChange('fromDelivery', text)}
         />
 
         <Text style={styles.label}>Your Offer Price:</Text>
         <TextInput
           style={styles.input}
-          placeholder="Eg Rs1500"
-          value={acceptOrder.fromDelivery}
-          onChangeText={(text) => handleInputChange('fromDelivery', text)}
+          placeholder="Rs1500"
+          value={acceptOrder.dealPrice}
+          onChangeText={(text) => handleInputChange('dealPrice', text)}
         />
   
        
   
-        {/* Assuming Btn is another custom component you have defined */}
         <View style={styles.buttonContainer}>
           <Btn
-            onPress={handleOrderRequest}
+            Press={handleOrderRequest}
             title="Request Order"
             bgColor="#9195F6"
             textColor="white"
             btnLabel="Place Order"
-            Press={() => navigation.navigate('Login')}
           />
         </View>
   

@@ -13,6 +13,7 @@ import { useFocusEffect } from '@react-navigation/core';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { addUser } from '../features/auth/userSlice.js';
 import { Alert } from 'react-native';
+import { deleteUser } from '../features/auth/userSlice.js';
 
 
 export default function HomeScreen({ route, navigation }) {

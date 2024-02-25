@@ -8,6 +8,7 @@ import { Octicons } from '@expo/vector-icons';
 import { useSelector } from "react-redux";
 export default function Navbar({ navigation }) {
     const user = useSelector((state) => state.user.user);
+    console.log(user);
 
     return (
         <View style={styles.navbar}>
