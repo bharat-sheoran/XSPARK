@@ -42,11 +42,9 @@ export default function Login({ navigation }) {
 
     return (
         <Background>
-            <View style={{ alignItems: "center", width: 350 }}>
-                <Text style={{ color: "#000000", fontSize: 64, fontWeight: '900', marginVertical: 30 }}>Login</Text>
-                <View style={{display:'flex',justifyContent: 'center',alignContent:'center', backgroundColor: "#fff", height: 470, width: 300, borderTopLeftRadius: 20, borderBottomRightRadius: 20, borderBottomLeftRadius: 20, borderTopRightRadius: 20, borderWidth: 0.4, paddingTop: 35, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 40, color: "#006400", fontWeight: '900' }}> Welcome Back</Text>
-                    <Text style={{ color: 'grey', fontSize: 15, fontWeight: 'bold', marginBottom: 20, }}>  Login to your account</Text>
+            <View style={{ alignItems: "center", marginTop: "90%"}}>
+                <Text style={{ color: "#000000", fontSize: 36, fontWeight: '400'}}>Login</Text>
+                <View style={{display:'flex',justifyContent: 'center', alignContent:'center', backgroundColor: "transparent"}}>
                     <View style={styles.container}>
                         <TextInput
                             style={styles.input}
@@ -60,12 +58,12 @@ export default function Login({ navigation }) {
                             onChangeText={(text) => handleAuthInputChange('password', text)}
                             secureTextEntry />
                         <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-                            <Text style={styles.buttonText}>Login</Text>
+                            <Text style={styles.buttonText}>Sign In</Text>
                         </TouchableOpacity>
                         <View style={{ marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
                             <Text style={{ display: 'flex', flexDirection: 'row', justifyContent: "center" }}>Don't have an account?</Text>
                             <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
-                                <Text style={{ color: "#006400", fontWeight: 'bold', fontSize: 14, textDecorationLine: 'underline', }}> Signup</Text>
+                                <Text style={{ color: "#38761D", fontWeight: 'bold', fontSize: 14, textDecorationLine: 'underline',}}> Signup</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -82,19 +80,19 @@ const styles = StyleSheet.create({
     },
     input: {
         height: 50,
-        width: 280,
-        borderWidth: 0.2,
+        width: '100%',
+        borderBottomWidth: 1,
         borderColor: 'black', // Border color
         color: 'black', // Text color
         marginTop: 10,
         marginBottom: 18,
         paddingHorizontal: 5,
-        borderRadius: 10,
         fontSize: 13,
+        fontWeight: '600'
     },
     button: {
         marginTop: 50,
-        backgroundColor: '#006400', // Button background color
+        backgroundColor: '#38761D', // Button background color
         borderRadius: 100,
         paddingVertical: 10,
         paddingHorizontal: 20,

@@ -11,11 +11,8 @@ export default function Welcome({ navigation }) {
   return (
     <Background>
       <View style={styles.container}>
-        <Text style={styles.title}>Let's Get Started</Text>
-        <Text style={styles.subtitle}>"From Farms to Trades, our app never fades; where cultivators and traders make prosperous trades!"</Text>
-        <Btn bgColor={darkGreen} textColor={'white'} btnLabel="Login" Press={()=>navigation.navigate("Login")}/>
-        <Btn bgColor={'white'} textColor={darkGreen} btnLabel="Sign Up" Press={()=>navigation.navigate("Signup")} />
-
+        {/* <Btn bgColor={darkGreen} textColor={'white'} btnLabel="Login" Press={() => navigation.navigate("Login")} />
+      <Btn bgColor={'white'} textColor={darkGreen} btnLabel="Sign Up" Press={() => navigation.navigate("Signup")} /> */}
       </View>
     </Background>
   );
@@ -24,16 +21,15 @@ export default function Welcome({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    marginHorizontal: 35,
-    marginVertical: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#355D24'
   },
   title: {
-    marginTop:40,
+    marginTop: 40,
     color: darkGreen,
     fontSize: 35,
-    fontWeight :'900',
+    fontWeight: '900',
     marginBottom: 20,
   },
   subtitle: {

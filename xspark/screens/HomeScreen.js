@@ -36,7 +36,6 @@ export default function HomeScreen({ route, navigation }) {
             if (response.status === 200) {
                 await AsyncStorage.removeItem('user');
                 console.log("Item Deleted");
-                navigation.navigate("Welcome");
             }
         } catch (e) {
             console.log("Error while Logging out");

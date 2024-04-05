@@ -3,7 +3,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import React, { useState } from 'react';
 import Background from "./Background";
 import axios from 'axios';
-import {ReqIP} from '@env';
+import { ReqIP } from '@env';
 
 
 export default function Signup({ navigation }) {
@@ -33,24 +33,47 @@ export default function Signup({ navigation }) {
 
     async function handleSubmit() {
         console.log(registerData, userType);
-        let response = await axios.post(`http://${ReqIP}:8080/api/auth/signup`, {registerData, userType: userType});
+        let response = await axios.post(`http://${ReqIP}:8080/api/auth/signup`, { registerData, userType: userType });
         console.log(response);
         navigation.navigate("Login");
     }
 
     return (
-        <Background>
-            <View style={{ alignItems: "center", width: 350 }}>
-                <Text style={{ color: "#000000", fontSize: 60, fontWeight: '900', marginVertical: 15 }}>Register</Text>
-                <View style={{ display:'flex',justifyContent: 'center',alignContent:'center', backgroundColor: "#fff", height: 560, width: 300, borderTopLeftRadius: 20, borderBottomRightRadius: 20, borderBottomLeftRadius: 20, borderTopRightRadius: 20, borderWidth: 0.4, paddingTop: 10, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 40, color: "#006400", fontWeight: '900' }}>XSPARK</Text>
+        <ScrollView>
+            <View style={{ alignItems: "center" }}>
+                <Text style={{ color: "#000000", fontSize: 36, fontWeight: '400', marginTop: 60 }}>Sign Up</Text>
+                <View style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', backgroundColor: "transparent", width: '90%', height: '90%', alignItems: 'center' }}>
                     <Text style={{ color: 'grey', fontSize: 15, fontWeight: 'bold', marginBottom: 10, }}> Create your account</Text>
                     <View style={styles.container}>
                         <TextInput
                             style={styles.input}
-                            placeholder="Name"
+                            placeholder="Enter your full Name"
                             value={registerData.name}
                             onChangeText={(text) => handleInputChange('name', text)}
+                        />
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Enter 12 Digit Aadhar No."
+                        // value={registerData.name}
+                        /*onChangeText={(text) => handleInputChange('name', text)*/
+                        />
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Enter KCC No."
+                        // value={registerData.name}
+                        /*onChangeText={(text) => handleInputChange('name', text)*/
+                        />
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Enter Mobile No."
+                        // value={registerData.name}
+                        /*onChangeText={(text) => handleInputChange('name', text)*/
+                        />
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Enter OTP"
+                        // value={registerData.name}
+                        /*onChangeText={(text) => handleInputChange('name', text)*/
                         />
                         <TextInput
                             style={styles.input}
@@ -85,7 +108,7 @@ export default function Signup({ navigation }) {
                                 setValue={(val) => setUserType(val)}
                                 maxHeight={200}
                                 autoScroll
-                                placeholder="Select user type"
+                                placeholder="Select State"
                                 placeholderStyle={{ fontWeight: '300', fontSize: 15 }}
                                 showTickIcon={true}
                                 showArrowIcon={true}
@@ -94,18 +117,18 @@ export default function Signup({ navigation }) {
                             />
                         </View>
                         <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-                            <Text style={styles.buttonText}>Sign Up</Text>
+                            <Text style={styles.buttonText}>Register</Text>
                         </TouchableOpacity>
-                        <View style={{ marginTop: 20, display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
+                        <View style={{display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
                             <Text style={{ display: 'flex', flexDirection: 'row', justifyContent: "center" }}>Already have an account?</Text>
                             <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-                                <Text style={{ color: "#006400", fontWeight: 'bold', fontSize: 14, textDecorationLine: 'underline' }}> Login</Text>
+                                <Text style={{ color: "#7CAA1A", fontWeight: 'bold', fontSize: 14, textDecorationLine: 'underline' }}>Login</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 </View>
             </View>
-        </Background>
+        </ScrollView>
     )
 }
 
@@ -116,24 +139,22 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     input: {
-        height: 35,
-        width: 280,
-        borderWidth: 0.2,
+        height: 54,
+        width: 300,
+        borderBottomWidth: 1,
         borderColor: 'black', // Border color
         color: 'black', // Text color
-        marginTop: 8,
-        marginBottom: 15,
         paddingHorizontal: 5,
-        borderRadius: 10,
-        fontSize: 13,
+        fontSize: 16,
+        fontWeight: '600'
     },
     button: {
         marginTop: 20,
-        backgroundColor: '#006400', // Button background color
+        backgroundColor: '#7CAA1A', // Button background color
         borderRadius: 100,
         paddingVertical: 10,
         paddingHorizontal: 20,
-        width: 270,
+        width: 189,
         alignItems: 'center',
     },
     buttonText: {
